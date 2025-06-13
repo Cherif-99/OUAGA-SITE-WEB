@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sites Patrimoniaux de Ouagadougou</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url("images/ouaga.png") no-repeat center center fixed;
+      background-size: cover;
+      color: #222;
+      padding: 40px 20px;
+    }
+
+    nav {
+      background-color: rgba(0, 51, 102, 0.85);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav li {
+      margin: 0;
+    }
+
+    nav a {
+      display: block;
+      padding: 14px 25px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #0059b3;
+    }
+
+    #content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-weight: 900;
+      font-size: 2.8rem;
+      color: #fefefe;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+      margin-bottom: 40px;
+      text-align: center;
+      max-width: 800px;
+    }
+
+    #menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .site {
+      background: transparent;
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .site img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .site-title {
+      padding: 10px 0;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+      background: none;
+      user-select: none;
+    }
+
+    .site a {
+      color: inherit;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .back {
+      margin-top: 50px;
+      background-color: #007BFF;
+      color: white;
+      padding: 14px 36px; 
+      font-weight: 600;
+      border-radius: 0;    
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      font-size: 1rem;
+      user-select: none;
+    }
+
+    .back:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    .center-btn {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    footer {
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #f0f0f0;
+      text-align: center;
+      border-radius: 12px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 2rem;
+        padding: 0 10px;
+      }
+
+      .site img {
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="content">
+    <h1><b>Liste des sites patrimoniaux de Ouagadougou</b></h1>
+
+    <nav>
+      <ul>
+        <li><a href="PageAccueil.html">Accueil</a></li>
+        <li><a href="PagePatrimoine.html">Patrimoine</a></li>
+        <li><a href="reservation.html">Réservation d'hôtel</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+      </ul>
+    </nav>
+
+    <div id="menu">
+
+      <div class="site">
+        <a href="mogo.html">
+          <img src="images/moogo.png" alt="Palais du Moogho Naaba" />
+          <div class="site-title">Palais du Moogho Naaba</div>
+        </a>
+      </div>
+
+      <div class="site">
+        <a href="cathedrale.html">
+          <img src="images/cathédrale.png" alt="Cathédrale de Ouagadougou" />
+          <div class="site-title">Cathédrale de l'Immaculée-Conception</div>
+        </a>
+      </div>
+
+      <div class="site">
+        <a href="Mosquée.html">
+          <img src="images/mosquée.png" alt="Grande mosquée de Ouagadougou" />
+          <div class="site-title">Grande mosquée de Ouagadougou</div>
+        </a>
+      </div>
+
+      <div class="site">
+        <a href="MonuHero.html">
+          <img src="images/Monument des héros.png" alt="Monument des héros nationaux" />
+          <div class="site-title">Monument des héros nationaux</div>
+        </a>
+      </div>
+
+      <div class="site">
+        <a href="sankara.html">
+          <img src="images/Sankara.png" alt="Mémorial Thomas Sankara" />
+          <div class="site-title">Mémorial Thomas Sankara</div>
+        </a>
+      </div>
+
+      <div class="site">
+        <a href="placenation.html">
+          <img src="images/placenation.png" alt="Place de la Nation" />
+          <div class="site-title">Place de la Nation</div>
+        </a>
+      </div>
+
+      <div class="site">
+        <a href="martyrs.html">
+          <img src="images/Monument des martyrs.png" alt="Monument des Martyrs" />
+          <div class="site-title">Monument des Martyrs</div>
+        </a>
+      </div>
+
+      <div class="site">
+        <a href="yennega.html">
+          <img src="images/Monument Princesse Yennega.png" alt="Monument Princesse Yennega" />
+          <div class="site-title">Monument de la Princesse Yennenga</div>
+        </a>
+      </div>
+
+      <div class="site">
+        <a href="village.html">
+          <img src="images/Village artisanal.png" alt="Village Artisanal" />
+          <div class="site-title">Village Artisanal</div>
+        </a>
+      </div>
+
+      <div class="site">
+        <a href="peuple.html">
+          <img src="images/Maison du peuple.png" alt="Maison du Peuple de Ouagadougou" />
+          <div class="site-title">Maison du Peuple de Ouagadougou</div>
+        </a>
+      </div>
+
+      <div class="site">
+        <a href="musee.html">
+          <img src="images/NATIONAL4.png" alt="Musée National de Ouagadougou" />
+          <div class="site-title">Musée National de OUAGADOUGOU</div>
+        </a>
+      </div>
+
+      <div class="site">
+        <a href="cineaste.html">
+          <img src="images/Monument Cinéaste africain.png" alt="Monument des Cinéastes Africains" />
+          <div class="site-title">Monument des Cinéastes Africains</div>
+        </a>
+      </div>
+
+      <div class="site">
+        <a href="musique.html">
+          <img src="images/Musée de la Musique.png" alt="Musée de la Musique" />
+          <div class="site-title">Musée de la Musique</div>
+        </a>
+      </div>
+
+      <div class="site">
+        <a href="CENASA.html">
+          <img src="images/cenasa.png" alt="CENASA" />
+          <div class="site-title">CENASA</div>
+        </a>
+      </div>
+
+      <div class="site">
+        <a href="museearmee.html">
+          <img src="images/Musée des forces armées.png" alt="Musée des Forces Armées" />
+          <div class="site-title">Musée des Forces Armées</div>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="center-btn">
+      <a href="index.html" class="back">← Retour</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Ville de Ouagadougou. Tous droits réservés.</p>
+    <p>Contact : <a href="mailto:info@ouagadougou-tourisme.bf" style="color:#aaddff;">info@ouagadougou-tourisme.bf</a></p>
+  </footer>
+
+</body>
+</html>

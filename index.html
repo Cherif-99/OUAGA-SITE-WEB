@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OUAGADOUGOU</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-image: url("images/ouaga.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
+    }
+
+    header {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 10px 0;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    header img {
+      height: 70px;
+      animation: fadeInDown 1s ease;
+    }
+
+    nav {
+      background-color: rgba(0, 51, 102, 0.85);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav li {
+      margin: 0;
+    }
+
+    nav a {
+      display: block;
+      padding: 14px 25px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #0059b3;
+    }
+
+    main {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 50px 20px;
+      margin: 40px auto;
+      width: 85%;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    main h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    main p {
+      font-size: 1.3em;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 20px;
+      text-align: center;
+      color: #ccc;
+      font-size: 0.9em;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="images/logo.png" alt="LOGO OUAGADOUGOU">
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="PageAccueil.html">Accueil</a></li>
+      <li><a href="PagePatrimoine.html">Patrimoine</a></li>
+      <li><a href="reservation.html">Réservation d'hôtel</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Bienvenue à Ouagadougou</h1>
+    <p>Explorez les merveilles culturelles et touristiques de notre belle capitale.</p>
+  </main>
+
+  <footer>
+    &copy; 2025 Ville de Ouagadougou. Tous droits réservés.<br>
+    Contact : <a href="mailto:info@ouagadougou-tourisme.bf">info@ouagadougou-tourisme.bf</a>
+  </footer>
+
+</body>
+</html>

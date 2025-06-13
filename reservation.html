@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Réservation Hôtel</title>
+  <style>
+     {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url("images/ouaga.png") no-repeat center center fixed;
+      background-size: cover;
+    }
+nav {
+      background-color: rgba(0, 51, 102, 0.85);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav li {
+      margin: 0;
+    }
+
+    nav a {
+      display: block;
+      padding: 14px 25px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #0059b3;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px 150px 20px;
+    }
+
+    .reservation-container {
+      background-color: #ffffffcc;
+      padding: 25px 40px;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin: 12px 0 6px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .checkbox-group, .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .checkbox-group label,
+    .radio-group label {
+      font-weight: normal;
+    }
+
+    button {
+      padding: 15px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004999;
+    }
+
+    #confirmation {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .retour {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+<nav>
+    <ul>
+      <li><a href="PageAccueil.html">Accueil</a></li>
+      <li><a href="PagePatrimoine.html">Patrimoine</a></li>
+      <li><a href="reservation.html">Réservation d'hôtel</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+    </ul>
+  </nav>
+
+  <div class="reservation-container">
+    <h1>Formulaire de Réservation d'Hôtel</h1>
+    <form id="reservationForm" action="#" method="post">
+      <label for="nom">Nom complet *</label>
+      <input type="text" id="nom" name="nom" required>
+
+      <label for="email">Adresse email *</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="tel">Numéro de téléphone *</label>
+      <input type="tel" id="tel" name="tel" required pattern="[+0-9\s\-]{8,15}">
+
+      <label for="date-arrivee">Date d'arrivée *</label>
+      <input type="date" id="date-arrivee" name="date_arrivee" required>
+
+      <label for="date-depart">Date de départ *</label>
+      <input type="date" id="date-depart" name="date_depart" required>
+
+      <label for="nb-personnes">Nombre de personnes *</label>
+      <input type="number" id="nb-personnes" name="nb_personnes" min="1" max="10" required>
+
+      <label for="type-chambre">Type de chambre *</label>
+      <select id="type-chambre" name="type_chambre" required>
+        <option value="">-- Choisissez une option --</option>
+        <option value="simple">Simple</option>
+        <option value="double">Double</option>
+        <option value="suite">Suite</option>
+        <option value="familiale">Familiale</option>
+      </select>
+
+      <label>Préférences supplémentaires</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="preferences" value="fumeur"> Chambre fumeur</label>
+        <label><input type="checkbox" name="preferences" value="non-fumeur"> Chambre non-fumeur</label>
+        <label><input type="checkbox" name="preferences" value="lit-bebe"> Lit bébé</label>
+        <label><input type="checkbox" name="preferences" value="acces-handicape"> Accès handicapé</label>
+      </div>
+
+      <label>Mode de paiement préféré *</label>
+      <div class="radio-group">
+        <label><input type="radio" name="paiement" value="carte" required> Carte bancaire</label>
+        <label><input type="radio" name="paiement" value="especes"> Espèces</label>
+        <label><input type="radio" name="paiement" value="cheque"> Chèque</label>
+      </div>
+
+      <label for="remarques">Remarques / demandes spéciales</label>
+      <textarea id="remarques" name="remarques" rows="4"></textarea>
+
+      <button type="submit">Réserver</button>
+    </form>
+
+    <div id="confirmation">✅ Votre réservation a bien été reçue avec succès !</div>
+
+    <a href="index.html" class="retour">← Retour</a>
+  </div>
+
+  <script>
+    const form = document.getElementById('reservationForm');
+    const confirmation = document.getElementById('confirmation');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      confirmation.style.display = 'block';
+      form.reset();
+
+      setTimeout(() => {
+        confirmation.style.display = 'none';
+      }, 5000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Galerie – Sites patrimoniaux de Ouagadougou</title>
+  <style>
+     {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+nav {
+      background-color: rgba(0, 51, 102, 0.85);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav li {
+      margin: 0;
+    }
+
+    nav a {
+      display: block;
+      padding: 14px 25px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #0059b3;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url("images/ouaga.png") no-repeat center center fixed;
+      background-size: cover;
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;    
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+   
+
+    h1 {
+      margin-bottom: 30px;
+      text-align: center;
+      color: #2c3e50;
+      font-weight: 700;
+      font-size: 2.3rem;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    figure {
+      margin: 0;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 5px;
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    figure:hover {
+      transform: scale(1.02);
+    }
+
+    figure img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      border-radius: 5px;
+    }
+
+    .back {
+      display: inline-block;
+      margin: 40px 0 20px;
+      padding: 14px 30px;
+      background: #2980b9;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 12px rgba(41, 128, 185, 0.3);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .back:hover {
+      background: #1c5980;
+      box-shadow: 0 10px 20px rgba(28, 89, 128, 0.5);
+    }
+
+    footer {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #f0f0f0;
+  text-align: center;
+  padding: 30px 10px;
+  border-radius: 0;
+  margin-top: auto;
+  position: relative;
+  bottom: 0;
+}
+
+
+    footer a {
+      color: #aaddff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    #modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      flex-direction: column;
+    }
+
+    #modal img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 8px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.8);
+    }
+
+    #modal .close-btn {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      font-size: 2.5rem;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      background: rgba(0,0,0,0.3);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+    }
+
+    .nav-btn {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      color: white;
+      background: rgba(0, 0, 0, 0.4);
+      border: none;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      border-radius: 50%;
+      z-index: 10000;
+      transition: background 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.4);
+      color: black;
+    }
+
+    .prev-btn {
+      left: 20px;
+    }
+
+    .next-btn {
+      right: 20px;
+    }
+
+    @media (max-width: 500px) {
+      figure img {
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+<nav>
+    <ul>
+      <li><a href="PageAccueil.html">Accueil</a></li>
+      <li><a href="PagePatrimoine.html">Patrimoine</a></li>
+      <li><a href="reservation.html">Réservation d'hôtel</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+    </ul>
+  </nav>
+
+  <h1>Galerie des sites patrimoniaux de Ouagadougou</h1>
+
+  <div class="gallery">
+    <figure>
+       <img src="images/moogo.png" alt="Palais du Moogho Naaba" />
+    </figure>
+<figure>
+     <img src="images/NATION1.png" alt="Place de la Nation" />
+    </figure>
+
+<figure>
+       <img src="images/CINEASTE1.png" alt="Monument des Cinéastes Africains" />
+    </figure>
+<figure>
+     <img src="images/ARMEE4.png" alt="Musée des forces armées" />
+    </figure>
+     <figure>
+     <img src="images/NATION2.png" alt="Place de la Nation" />
+    </figure>
+<figure>
+       <img src="images/SANKARA1.png" alt="Mémorial Thomas Sankara" />
+    </figure>
+
+<figure>
+       <img src="images/MOOGHO1.png" alt="Palais du Moogho Naaba" />
+    </figure>
+<figure>
+       <img src="images/SANKARA2.png" alt="Mémorial Thomas Sankara" />
+    </figure>
+<figure>
+     <img src="images/NATION3.png" alt="Place de la Nation" />
+    </figure>
+<figure>
+       <img src="images/SANKARA3.png" alt="Mémorial Thomas Sankara" />
+    </figure>
+    <figure>
+     <img src="images/cathédrale.png" alt="Cathédrale de Ouagadougou" />
+    </figure>
+<figure>
+     <img src="images/NATION4.png" alt="Place de la Nation" />
+    </figure>
+
+    <figure>
+    <img src="images/mosquée.png" alt="Grande mosquée de Ouagadougou" />
+    </figure>
+<figure>
+     <img src="images/CATHEDRALE1.png" alt="Cathédrale de Ouagadougou" />
+    </figure>
+ <figure>
+    <img src="images/MOSQUEE1.png" alt="Grande mosquée de Ouagadougou" />
+    </figure>
+    
+
+<figure>
+       <img src="images/CINEASTE3.png" alt="Monument des Cinéastes Africains" />
+    </figure>
+
+<figure>
+       <img src="images/MOOGHO2.png" alt="Palais du Moogho Naaba" />
+    </figure>
+<figure>
+    <img src="images/MOSQUEE2.png" alt="Grande mosquée de Ouagadougou" />
+    </figure>
+
+    <figure>
+      <img src="images/martyr1.png" alt="Monument des martyrs" />
+    </figure>
+
+<figure>
+       <img src="images/CINEASTE3.png" alt="Monument des Cinéastes Africains" />
+    </figure>
+
+<figure>
+     <img src="images/CATHEDRALE2.png" alt="Cathédrale de Ouagadougou" />
+    </figure>
+
+    <figure>
+      <img src="images/martyr2.png" alt="Monument des martyrs" />
+    </figure>
+<figure>
+      <img src="images/YENNEGA2.png" alt="Monument Princesse Yennega" />
+    </figure>
+
+
+    <figure>
+      <img src="images/VILLAGE4.png" alt="Village Artisanal" />
+    </figure>
+
+
+<figure>
+       <img src="images/CINEASTE2.png" alt="Monument des Cinéastes Africains" />
+    </figure>
+<figure>
+    
+    <img src="images/MOSQUEE3.png" alt="Grande mosquée de Ouagadougou" />
+    </figure>
+
+    <figure>
+      <img src="images/VILLAGE5.png" alt="Village Artisanal" />
+    </figure>
+<figure>
+     <img src="images/NATIONAL4.png" alt="Musée National de OUAGADOUGOU" />
+    </figure>
+
+
+    <figure>
+      <img src="images/Monument des héros.png" alt="Monument des héros nationaux" />
+    </figure>
+
+    <figure>
+      <img src="images/VILLAGE6.png" alt="Village Artisanal" />
+    </figure>
+ <figure>
+      <img src="images/hero1.png" alt="Monument des héros nationaux" />
+    </figure>
+
+<figure>
+     <img src="images/NATIONAL3.png" alt="Musée National de OUAGADOUGOU" />
+    </figure>
+<figure>
+     <img src="images/Maison du Peuple.png" alt="Maison du Peuple " />
+    </figure>
+
+ <figure>
+      <img src="images/hero2.png" alt="Monument des héros nationaux" />
+    </figure>
+
+    <figure>
+       <img src="images/Sankara.png" alt="Mémorial Thomas Sankara" />
+    </figure>
+<figure>
+      <img src="images/hero3.png" alt="Monument des héros nationaux" />
+    </figure>
+
+<figure>
+       <img src="images/CINEASTE3.png" alt="Monument des Cinéastes Africains" />
+    </figure>
+<figure>
+     <img src="images/CENASA1.png" alt="CENASA" />
+    </figure>
+
+
+<figure>
+    <img src="images/MOSQUEE4.png" alt="Grande mosquée de Ouagadougou" />
+    </figure>
+<figure>
+     <img src="images/CENASA2.png" alt="CENASA" />
+    </figure>
+
+<figure>
+     <img src="images/ARMEE3.png" alt="Musée des forces armées" />
+    </figure>
+<figure>
+     <img src="images/NATIONAL2.png" alt="Musée National de OUAGADOUGOU" />
+    </figure>
+
+<figure>
+       <img src="images/MOOGHO3.png" alt="Palais du Moogho Naaba" />
+    </figure>
+<figure>
+     <img src="images/cenasa.png" alt="CENASA" />
+    </figure>
+
+    <figure>
+     <img src="images/placenation.png" alt="Place de la Nation" />
+    </figure>
+<figure>
+       <img src="images/MOOGHO4.png" alt="Palais du Moogho Naaba" />
+    </figure>
+<figure>
+     <img src="images/ARMEE2.png" alt="Musée des forces armées" />
+    </figure>
+
+    <figure>
+       <img src="images/Monument des martyrs.png" alt="Monument des Martyrs" />
+    </figure>
+<figure>
+       <img src="images/CINEASTE4.png" alt="Monument des Cinéastes Africains" />
+    </figure>
+ <figure>
+     <img src="images/NATIONAL1.png" alt="Musée National de OUAGADOUGOU" />
+    </figure>
+
+    <figure>
+      <img src="images/Monument Princesse Yennega.png" alt="Monument Princesse Yennega" />
+    </figure>
+
+    <figure>
+      <img src="images/Village artisanal.png" alt="Village Artisanal" />
+    </figure>
+<figure>
+      <img src="images/YENNEGA1.png" alt="Monument Princesse Yennega" />
+    </figure>
+
+<figure>
+       <img src="images/CINEASTE5.png" alt="Monument des Cinéastes Africains" />
+    </figure>
+
+    <figure>
+     <img src="images/peuple.png" alt="Maison du Peuple " />
+    </figure>
+
+
+    <figure>
+     <img src="images/ARMEE1.png" alt="Musée des forces armées" />
+    </figure>
+
+    <figure>
+       <img src="images/Monument Cinéaste africain.png" alt="Monument des Cinéastes Africains" />
+    </figure>
+<figure>
+     <img src="images/Musée des forces armées.png" alt="Musée des forces armées" />
+    </figure>
+
+<figure>
+     <img src="images/peuple1.png" alt="Maison du Peuple " />
+    </figure>
+
+
+  </div>
+
+  <a href="index.html" class="back">← Retour</a>
+
+  <footer> 
+    <p>&copy; 2025 Ville de Ouagadougou. Tous droits réservés.</p>
+    <p>Contact : <a href="mailto:info@ouagadougou-tourisme.bf">info@ouagadougou-tourisme.bf</a></p>
+  </footer>
+
+  <div id="modal">
+    <span class="close-btn" title="Fermer">&times;</span>
+    <button class="nav-btn prev-btn">&#10094;</button>
+    <img src="" alt="Image agrandie" />
+    <button class="nav-btn next-btn">&#10095;</button>
+  </div>
+
+  <script>
+    const modal = document.getElementById('modal');
+    const modalImg = modal.querySelector('img');
+    const closeBtn = modal.querySelector('.close-btn');
+    const nextBtn = modal.querySelector('.next-btn');
+    const prevBtn = modal.querySelector('.prev-btn');
+    const figures = document.querySelectorAll('.gallery figure');
+
+    let currentIndex = 0;
+
+    function openModal(index) {
+      const img = figures[index].querySelector('img');
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      currentIndex = index;
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % figures.length;
+      openModal(currentIndex);
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + figures.length) % figures.length;
+      openModal(currentIndex);
+    }
+
+    figures.forEach((figure, index) => {
+      figure.addEventListener('click', () => openModal(index));
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'ArrowLeft') showPrev();
+    });
+
+    nextBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      showNext();
+    });
+
+    prevBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      showPrev();
+    });
+  </script>
+
+</body>
+</html>
