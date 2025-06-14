@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Réservation d'Hôtels à Ouagadougou</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url("images/ouaga.png") no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #004080; /* Couleur bleu uniforme */
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      margin: 0;
+    }
+
+    nav a {
+      display: block;
+      padding: 16px 20px;
+      color: #ffffff; /* Texte en blanc */
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: #0066cc; /* Bleu plus clair au survol */
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      padding: 40px;
+      flex: 1;
+    }
+
+    .hotel-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .hotel-card {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      width: 300px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .hotel-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .hotel-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .hotel-card h3 {
+      margin: 15px 0 5px;
+    }
+
+    .hotel-card p {
+      margin: 5px 0;
+    }
+
+    .hotel-card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #004080;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .hotel-card a:hover {
+      background-color: #0066cc;
+    }
+
+    /* Bouton retour */
+    .bas-page {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .bas-page button {
+      padding: 15px 30px;
+      font-size: 16px;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .bas-page button:hover {
+      background-color: #0066cc;
+    }
+
+    /* Footer */
+    footer {
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- En-tête -->
+  <header>
+    <h1>Réservez un Hôtel à Ouagadougou</h1>
+    <p>Découvrez les meilleurs hébergements de la capitale</p>
+  </header>
+
+  <!-- Barre de navigation -->
+  <nav>
+    <ul>
+      <li><a href="PageAccueil.html">Accueil</a></li>
+      <li><a href="PagePatrimoine.html">Patrimoine</a></li>
+      <li><a href="hotels.html">Réservation d'hôtel</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenu principal -->
+  <div class="container">
+    <div class="hotel-list">
+
+      <!-- Hôtel 1 -->
+      <div class="hotel-card">
+        <img src="images/splendide.png" alt="Splendid Hôtel">
+        <h3>Splendid Hôtel</h3>
+        <p>📍 Centre-ville</p>
+        <p>💰 40 000 FCFA / nuit</p>
+        <a href="reservation.html">Réserver</a>
+      </div>
+
+      <!-- Hôtel 2 -->
+      <div class="hotel-card">
+        <img src="images/zindnaba.png" alt="Zind Naba Hôtel">
+        <h3>Zind Naba Hôtel</h3>
+        <p>📍 Quartier Zogona</p>
+        <p>💰 30 000 FCFA / nuit</p>
+        <a href="reservation.html">Réserver</a>
+      </div>
+
+      <!-- Hôtel 3 -->
+      <div class="hotel-card">
+        <img src="images/sonia.png" alt="Hôtel Sonia">
+        <h3>Hôtel Sonia</h3>
+        <p>📍 Ouaga 2000</p>
+        <p>💰 50 000 FCFA / nuit</p>
+        <a href="reservation.html">Réserver</a>
+      </div>
+
+      <!-- Hôtel 4 -->
+      <div class="hotel-card">
+        <img src="images/silmande.png" alt="Silmandé Hôtel">
+        <h3>Silmandé Hôtel</h3>
+        <p>📍 Route de Kaya</p>
+        <p>💰 75 000 FCFA / nuit</p>
+        <a href="reservation.html">Réserver</a>
+      </div>
+
+      <!-- Hôtel 5 -->
+      <div class="hotel-card">
+        <img src="images/royal.png" alt="Royal Beach Hôtel">
+        <h3>Royal Beach Hôtel</h3>
+        <p>📍 Bassinko</p>
+        <p>💰 60 000 FCFA / nuit</p>
+        <a href="reservation.html">Réserver</a>
+      </div>
+
+      <!-- Hôtel 6 -->
+      <div class="hotel-card">
+        <img src="images/lancaster.png" alt="Lancaster Hôtel">
+        <h3>Lancaster Hôtel</h3>
+        <p>📍 Av. Pascal Zagre</p>
+        <p>💰 65 000 FCFA / nuit</p>
+        <a href="reservation.html">Réserver</a>
+      </div>
+
+      <!-- Hôtel 7 -->
+      <div class="hotel-card">
+        <img src="images/bravia.png" alt="Bravia Hôtel">
+        <h3>Bravia Hôtel</h3>
+        <p>📍 Av. Kwame Nkrumah</p>
+        <p>💰 90 000 FCFA / nuit</p>
+        <a href="reservation.html">Réserver</a>
+      </div>
+
+      <!-- Hôtel 8 -->
+      <div class="hotel-card">
+        <img src="images/azalai.png" alt="Azalaï Hôtel">
+        <h3>Azalaï Hôtel</h3>
+        <p>📍 Centre-ville</p>
+        <p>💰 100 000 FCFA / nuit</p>
+        <a href="reservation.html">Réserver</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bouton retour à l'accueil -->
+  <div class="bas-page">
+    <button onclick="window.location.href='index.html'">⬅ Retour</button>
+  </div>
+
+  <!-- Pied de page -->
+  <footer>
+    <p>&copy; 2025 Ville de Ouagadougou. Tous droits réservés.</p>
+    <p>Contact : <a href="mailto:info@ouagadougou-tourisme.bf" style="color: #ddd;">info@ouagadougou-tourisme.bf</a></p>
+  </footer>
+
+</body>
+</html>
